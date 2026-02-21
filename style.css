@@ -1487,9 +1487,15 @@ body:hover .cursor-glow {
 
 /* ========== Contact Section (Dark) ========== */
 .section-dark .contact-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 16px;
+}
+
+.section-dark .contact-card {
+    flex: 0 1 calc(25% - 12px);
+    min-width: 200px;
 }
 
 .section-dark .contact-card {
@@ -1619,8 +1625,8 @@ body:hover .cursor-glow {
         display: none;
     }
 
-    .section-dark .contact-grid {
-        grid-template-columns: repeat(3, 1fr);
+    .section-dark .contact-card {
+        flex: 0 1 calc(33.333% - 12px);
     }
 
 }
@@ -1693,6 +1699,7 @@ body:hover .cursor-glow {
 
     .code-window {
         max-width: 360px;
+        text-align: left;
     }
 
     .hero-name {
@@ -1715,8 +1722,8 @@ body:hover .cursor-glow {
         grid-template-columns: 1fr;
     }
 
-    .section-dark .contact-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .section-dark .contact-card {
+        flex: 0 1 calc(50% - 8px);
     }
 
     .section {
@@ -1748,6 +1755,10 @@ body:hover .cursor-glow {
     .cursor-glow {
         display: none;
     }
+
+    .scroll-indicator {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1777,8 +1788,8 @@ body:hover .cursor-glow {
         justify-content: center;
     }
 
-    .section-dark .contact-grid {
-        grid-template-columns: 1fr;
+    .section-dark .contact-card {
+        flex: 0 1 100%;
     }
 
     .hero-image-wrapper {
