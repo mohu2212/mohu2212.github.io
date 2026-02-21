@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Hussein - Senior Flutter Developer</title>
+    <meta name="description" content="Senior Flutter Developer with 6+ years of expertise in building cross-platform mobile applications.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Mohamed Hussein - Senior Flutter Developer">
+    <meta property="og:description" content="Senior Flutter Developer with 6+ years of expertise in building cross-platform mobile applications. Specialized in Clean Architecture, BLoC/Cubit, and pixel-perfect UI/UX.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="me.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mohamed Hussein - Senior Flutter Developer">
+    <meta name="twitter:description" content="Senior Flutter Developer with 6+ years of expertise in building cross-platform mobile applications.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Floating Social Sidebar -->
+    <div class="social-sidebar">
+        <a href="https://github.com/mohu2212" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/mohamed-hussein-a529b8169" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/mohu2211" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/201151205977" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <div class="social-line"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">MH<span class="dot">.</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#opensource" class="nav-link">Open Source</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <canvas class="hero-particles" id="heroParticles"></canvas>
+        <div class="hero-bg-gradient"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="hero-badge animate-in" data-delay="0">
+                    <span class="badge-dot"></span>
+                    Open to Work - Full-time & Freelance
+                </div>
+                <h1 class="hero-name animate-in" data-delay="100">
+                    Mohamed<br><span class="gradient-text">Hussein</span>
+                </h1>
+                <h2 class="hero-title animate-in" data-delay="200">
+                    <span class="typing-prefix">I'm a </span>
+                    <span class="typing-text" id="typingText"></span>
+                    <span class="typing-cursor">|</span>
+                </h2>
+                <p class="hero-description animate-in" data-delay="300">
+                    6+ years crafting high-performance cross-platform mobile applications.
+                    Specialized in Clean Architecture, BLoC pattern, and delivering pixel-perfect experiences.
+                </p>
+                <div class="hero-stats animate-in" data-delay="400">
+                    <div class="stat">
+                        <span class="stat-number" data-target="20">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Apps Delivered</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="6">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="2">0</span>
+                        <span class="stat-label">Open Source Packages</span>
+                    </div>
+                </div>
+                <div class="hero-actions animate-in" data-delay="500">
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Get In Touch</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#projects" class="btn btn-outline">
+                        <span>View Projects</span>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1W6hlXNBygLqNjGNWCk1xEDCCwl5_1cLK/view?usp=drivesdk" target="_blank" rel="noopener" class="btn btn-ghost">
+                        <i class="fas fa-download"></i>
+                        <span>Resume</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual animate-in" data-delay="300">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-ring"></div>
+                    <div class="hero-image-ring ring-2"></div>
+                    <img src="me.jpg" alt="Mohamed Hussein" class="hero-image">
+                    <div class="hero-image-status">
+                        <span class="status-dot"></span>
+                    </div>
+                </div>
+                <div class="code-window">
+                    <div class="code-header">
+                        <div class="code-dots">
+                            <span class="code-dot red"></span>
+                            <span class="code-dot yellow"></span>
+                            <span class="code-dot green"></span>
+                        </div>
+                        <span class="code-title">main.dart</span>
+                    </div>
+                    <pre class="code-body"><code><span class="code-keyword">class</span> <span class="code-class">MohamedHussein</span> <span class="code-keyword">extends</span> <span class="code-class">FlutterDeveloper</span> {
+  <span class="code-keyword">final</span> experience = <span class="code-string">'6+ years'</span>;
+  <span class="code-keyword">final</span> apps = <span class="code-number">20</span>;
+  <span class="code-keyword">final</span> passion = <span class="code-string">'Building great apps'</span>;
+
+  <span class="code-type">List</span>&lt;<span class="code-type">String</span>&gt; <span class="code-method">get</span> skills =&gt; [
+    <span class="code-string">'Flutter & Dart'</span>,
+    <span class="code-string">'Clean Architecture'</span>,
+    <span class="code-string">'BLoC/Cubit'</span>,
+    <span class="code-string">'Firebase'</span>,
+    <span class="code-string">'RESTful APIs'</span>,
+  ];
+}</code></pre>
+                </div>
+                <div class="floating-badge badge-flutter">
+                    <i class="fab fa-flutter"></i> Flutter
+                </div>
+                <div class="floating-badge badge-dart">
+                    <i class="fas fa-code"></i> Dart
+                </div>
+                <div class="floating-badge badge-firebase">
+                    <i class="fas fa-fire"></i> Firebase
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator">
+            <div class="mouse">
+                <div class="mouse-wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">About</span>
+                <h2 class="section-title">Get to know me</h2>
+                <p class="section-desc">A passionate developer with a unique background</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>
+                        Experienced Flutter Developer with <strong>6+ years</strong> of expertise in building and deploying
+                        cross-platform mobile applications. Proficient in Dart programming, UI/UX implementation,
+                        and integrating RESTful APIs.
+                    </p>
+                    <p>
+                        Specialized in <strong>BLoC/Cubit state management</strong> with deep experience in
+                        <strong>Clean Architecture</strong> principles to ensure scalable and maintainable applications.
+                        Successfully delivered <strong>20+ production-ready applications</strong> for diverse clients across
+                        healthcare, education, transportation, and e-commerce sectors.
+                    </p>
+                    <p>
+                        Adept at managing complete project lifecycles independently and collaborating with teams
+                        to create seamless user experiences.
+                    </p>
+                </div>
+                <div class="about-info reveal" data-delay="200">
+                    <div class="info-card">
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <span class="info-label">Location</span>
+                                <span class="info-value">Egypt - Open to Relocate</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-language"></i></div>
+                            <div>
+                                <span class="info-label">Languages</span>
+                                <span class="info-value">Arabic (Native), English (Intermediate)</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <div>
+                                <span class="info-label">Education</span>
+                                <span class="info-value">B.Sc. Pharmacy - Sohag University</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-briefcase"></i></div>
+                            <div>
+                                <span class="info-label">Status</span>
+                                <span class="info-value available">Open to Work - Full-time & Freelance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section section-alt" id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Skills</span>
+                <h2 class="section-title">Technical Expertise</h2>
+                <p class="section-desc">Technologies and tools I work with daily</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category reveal">
+                    <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Mobile Development</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Flutter</span>
+                        <span class="tag">Dart</span>
+                        <span class="tag">Android</span>
+                        <span class="tag">iOS</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-icon"><i class="fas fa-palette"></i></div>
+                    <h3>Frontend / UI</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Flutter Widgets</span>
+                        <span class="tag">Material Design</span>
+                        <span class="tag">Cupertino Design</span>
+                        <span class="tag">Responsive UI</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
+                    <h3>State Management</h3>
+                    <div class="skill-tags">
+                        <span class="tag highlight">BLoC/Cubit</span>
+                        <span class="tag">GetX</span>
+                        <span class="tag">Provider</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-icon"><i class="fas fa-sitemap"></i></div>
+                    <h3>Architecture</h3>
+                    <div class="skill-tags">
+                        <span class="tag highlight">Clean Architecture</span>
+                        <span class="tag">MVVM</span>
+                        <span class="tag">MVC</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-icon"><i class="fas fa-server"></i></div>
+                    <h3>Backend Integration</h3>
+                    <div class="skill-tags">
+                        <span class="tag">RESTful APIs</span>
+                        <span class="tag">GraphQL</span>
+                        <span class="tag">Firebase</span>
+                        <span class="tag">Dio</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-icon"><i class="fas fa-database"></i></div>
+                    <h3>Database & Storage</h3>
+                    <div class="skill-tags">
+                        <span class="tag">SQLite</span>
+                        <span class="tag">Firestore</span>
+                        <span class="tag">Hive</span>
+                        <span class="tag">SharedPreferences</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-icon"><i class="fas fa-tools"></i></div>
+                    <h3>Tools & DevOps</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Git & GitHub</span>
+                        <span class="tag">GitHub Actions</span>
+                        <span class="tag">Firebase Distribution</span>
+                        <span class="tag">Codemagic</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-icon"><i class="fas fa-puzzle-piece"></i></div>
+                    <h3>Additional</h3>
+                    <div class="skill-tags">
+                        <span class="tag">FCM Notifications</span>
+                        <span class="tag">Google Maps</span>
+                        <span class="tag">Payment Gateways</span>
+                        <span class="tag">Localization (i18n)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Experience</span>
+                <h2 class="section-title">Professional Journey</h2>
+                <p class="section-desc">My career path and achievements</p>
+            </div>
+            <div class="timeline reveal">
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="timeline-pulse"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Senior Flutter Developer</h3>
+                            <span class="timeline-badge">Freelance</span>
+                        </div>
+                        <p class="timeline-date"><i class="far fa-calendar-alt"></i> January 2019 - Present</p>
+                        <ul class="timeline-list">
+                            <li>Developed and deployed <strong>20+ cross-platform mobile applications</strong> using Flutter for diverse clients across healthcare, education, transportation, and e-commerce sectors</li>
+                            <li>Collaborated with clients, designers, and product teams to gather requirements, design user flows, and implement pixel-perfect UI/UX designs</li>
+                            <li>Integrated Firebase services including Authentication, Cloud Firestore, and Cloud Messaging (FCM) for push notifications and real-time data synchronization</li>
+                            <li>Specialized in <strong>BLoC/Cubit and GetX</strong> state management patterns, ensuring efficient app performance, testability, and maintainability</li>
+                            <li>Applied <strong>Clean Architecture</strong> principles with separation of concerns (Presentation, Domain, Data layers) to create scalable and testable codebases</li>
+                            <li>Managed complete project lifecycles from initial concept and design through development, testing, deployment, and post-launch support</li>
+                            <li>Integrated RESTful APIs and third-party services including payment gateways, Google Maps, social media authentication, and analytics platforms</li>
+                            <li>Optimized app performance through code profiling, lazy loading, and efficient memory management, resulting in smooth <strong>60 FPS</strong> user experiences</li>
+                            <li>Implemented CI/CD pipelines using GitHub Actions and Firebase App Distribution for automated testing and deployment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section section-alt" id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-desc">Some of the apps I've built and shipped</p>
+            </div>
+            <div class="projects-grid">
+                <!-- Waslny -->
+                <div class="project-card reveal">
+                    <div class="project-card-glow"></div>
+                    <div class="project-icon"><i class="fas fa-car"></i></div>
+                    <div class="project-content">
+                        <h3>Waslny</h3>
+                        <p class="project-subtitle">Ride-Hailing Platform</p>
+                        <p>Comprehensive ride-hailing application for passengers with real-time GPS tracking and route optimization.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check-circle"></i> Real-time tracking</span>
+                            <span><i class="fas fa-check-circle"></i> Fare estimation</span>
+                            <span><i class="fas fa-check-circle"></i> In-app payments</span>
+                            <span><i class="fas fa-check-circle"></i> Ratings & reviews</span>
+                            <span><i class="fas fa-check-circle"></i> Bilingual (AR/EN)</span>
+                        </div>
+                        <div class="project-tech">
+                            <span>Flutter</span>
+                            <span>BLoC/Cubit</span>
+                            <span>Google Maps</span>
+                            <span>Firebase</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.waslny.app" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Google Play</a>
+                            <a href="https://apps.apple.com/sa/app/waslny-%D9%88%D8%B5%D9%84%D9%86%D9%8A/id6752649577" target="_blank" rel="noopener"><i class="fab fa-app-store-ios"></i> App Store</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Waslny Captain -->
+                <div class="project-card reveal">
+                    <div class="project-card-glow"></div>
+                    <div class="project-icon"><i class="fas fa-taxi"></i></div>
+                    <div class="project-content">
+                        <h3>Waslny Captain</h3>
+                        <p class="project-subtitle">Driver Application</p>
+                        <p>Driver-side companion app for Waslny platform with live order management and earnings tracking.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check-circle"></i> Live ride requests</span>
+                            <span><i class="fas fa-check-circle"></i> Navigation</span>
+                            <span><i class="fas fa-check-circle"></i> Earnings dashboard</span>
+                            <span><i class="fas fa-check-circle"></i> Background tracking</span>
+                        </div>
+                        <div class="project-tech">
+                            <span>Flutter</span>
+                            <span>BLoC/Cubit</span>
+                            <span>Google Maps</span>
+                            <span>Firebase</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.waslny.captain" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Google Play</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emirates RX -->
+                <div class="project-card reveal">
+                    <div class="project-card-glow"></div>
+                    <div class="project-icon"><i class="fas fa-pills"></i></div>
+                    <div class="project-content">
+                        <h3>Emirates RX</h3>
+                        <p class="project-subtitle">Medical Information Platform</p>
+                        <p>Pharmaceutical information application to assist pharmacists in UAE with medication details and prescription preparation.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check-circle"></i> Medication database</span>
+                            <span><i class="fas fa-check-circle"></i> Drug info lookup</span>
+                            <span><i class="fas fa-check-circle"></i> Offline access</span>
+                        </div>
+                        <div class="project-tech">
+                            <span>Flutter</span>
+                            <span>Clean Architecture</span>
+                            <span>BLoC/Cubit</span>
+                            <span>Hive</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.emirates.rx.emirates_rx" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Google Play</a>
+                            <a href="https://apps.apple.com/sa/app/emirates-rx/id6504558186" target="_blank" rel="noopener"><i class="fab fa-app-store-ios"></i> App Store</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medical Lab -->
+                <div class="project-card reveal">
+                    <div class="project-card-glow"></div>
+                    <div class="project-icon"><i class="fas fa-flask"></i></div>
+                    <div class="project-content">
+                        <h3>Al-Khudairi Lab</h3>
+                        <p class="project-subtitle">Medical Laboratory App</p>
+                        <p>Medical laboratory information system providing comprehensive test details, results, and promotional offers.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check-circle"></i> Test information</span>
+                            <span><i class="fas fa-check-circle"></i> PDF reports</span>
+                            <span><i class="fas fa-check-circle"></i> Push notifications</span>
+                        </div>
+                        <div class="project-tech">
+                            <span>Flutter</span>
+                            <span>BLoC/Cubit</span>
+                            <span>Firebase</span>
+                            <span>PDF Generation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.elkhoudary.lab.elkhoudarylab" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Google Play</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dr Course -->
+                <div class="project-card reveal">
+                    <div class="project-card-glow"></div>
+                    <div class="project-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="project-content">
+                        <h3>Dr Course</h3>
+                        <p class="project-subtitle">Educational Platform</p>
+                        <p>E-learning platform for medical students with video courses and interactive quizzes.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check-circle"></i> Video courses</span>
+                            <span><i class="fas fa-check-circle"></i> Interactive quizzes</span>
+                            <span><i class="fas fa-check-circle"></i> Certificates</span>
+                        </div>
+                        <div class="project-tech">
+                            <span>Flutter</span>
+                            <span>BLoC/Cubit</span>
+                            <span>Video Player</span>
+                            <span>Firebase</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.dr_course" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Google Play</a>
+                            <a href="https://apps.apple.com/sa/app/dr-course/id6443969611" target="_blank" rel="noopener"><i class="fab fa-app-store-ios"></i> App Store</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EduNest -->
+                <div class="project-card reveal">
+                    <div class="project-card-glow"></div>
+                    <div class="project-icon"><i class="fas fa-school"></i></div>
+                    <div class="project-content">
+                        <h3>EduNest</h3>
+                        <p class="project-subtitle">School Management System</p>
+                        <p>Comprehensive school management app for students, teachers, and parents with real-time notifications.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check-circle"></i> Attendance tracking</span>
+                            <span><i class="fas fa-check-circle"></i> Grade management</span>
+                            <span><i class="fas fa-check-circle"></i> Parent-teacher comm</span>
+                        </div>
+                        <div class="project-tech">
+                            <span>Flutter</span>
+                            <span>BLoC/Cubit</span>
+                            <span>GraphQL</span>
+                            <span>SQLite</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.edunest.eductional.app" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Google Play</a>
+                            <a href="https://apps.apple.com/sa/app/edunest/id6695762554" target="_blank" rel="noopener"><i class="fab fa-app-store-ios"></i> App Store</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Source Section -->
+    <section class="section" id="opensource">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Open Source</span>
+                <h2 class="section-title">Community Contributions</h2>
+                <p class="section-desc">Flutter packages published on pub.dev</p>
+            </div>
+            <div class="opensource-grid">
+                <a href="https://pub.dev/packages/stepwise" target="_blank" rel="noopener" class="opensource-card reveal">
+                    <div class="opensource-header">
+                        <i class="fas fa-cube"></i>
+                        <span class="opensource-badge">pub.dev</span>
+                    </div>
+                    <h3>StepWise</h3>
+                    <p>A Flutter package for creating step-by-step wizards and multi-step forms with customizable navigation and validation.</p>
+                    <div class="opensource-link">
+                        <span>View on pub.dev</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                <a href="https://pub.dev/packages/dynamic_rail" target="_blank" rel="noopener" class="opensource-card reveal">
+                    <div class="opensource-header">
+                        <i class="fas fa-cube"></i>
+                        <span class="opensource-badge">pub.dev</span>
+                    </div>
+                    <h3>Dynamic Rail</h3>
+                    <p>A Flutter package providing dynamic navigation rail widget with responsive behavior and customization options.</p>
+                    <div class="opensource-link">
+                        <span>View on pub.dev</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section section-alt" id="education">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Education</span>
+                <h2 class="section-title">Academic Background</h2>
+            </div>
+            <div class="education-card reveal">
+                <div class="education-icon"><i class="fas fa-university"></i></div>
+                <div class="education-content">
+                    <h3>Bachelor's Degree in Pharmacy</h3>
+                    <p class="education-school">Sohag University, Faculty of Pharmacy</p>
+                    <p class="education-location"><i class="fas fa-map-marker-alt"></i> Sohag, Egypt</p>
+                    <p class="education-year"><i class="far fa-calendar-alt"></i> Graduated 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section-dark" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag light">Contact</span>
+                <h2 class="section-title light">Let's Work Together</h2>
+                <p class="section-desc light">Have a project in mind? Let's build something amazing!</p>
+            </div>
+            <div class="contact-grid">
+                <a href="mailto:mo.hu2212@gmail.com" class="contact-card reveal">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>mo.hu2212@gmail.com</p>
+                </a>
+                <a href="https://wa.me/201151205977" target="_blank" rel="noopener" class="contact-card reveal">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>WhatsApp</h3>
+                    <p>+20 1151205977</p>
+                </a>
+                <a href="tel:+201151205977" class="contact-card reveal">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
+                    <p>+20 1151205977</p>
+                </a>
+                <a href="https://github.com/mohu2212" target="_blank" rel="noopener" class="contact-card reveal">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <p>mohu2212</p>
+                </a>
+                <a href="https://www.linkedin.com/in/mohamed-hussein-a529b8169" target="_blank" rel="noopener" class="contact-card reveal">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <p>Mohamed Hussein</p>
+                </a>
+                <a href="https://www.facebook.com/mohu2211" target="_blank" rel="noopener" class="contact-card reveal">
+                    <i class="fab fa-facebook"></i>
+                    <h3>Facebook</h3>
+                    <p>Mohamed Hussein</p>
+                </a>
+                <a href="https://drive.google.com/file/d/1W6hlXNBygLqNjGNWCk1xEDCCwl5_1cLK/view?usp=drivesdk" target="_blank" rel="noopener" class="contact-card reveal">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Download CV</h3>
+                    <p>View my full resume</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>Designed & Built by <strong>Mohamed Hussein</strong></p>
+            <div class="footer-links">
+                <a href="https://github.com/mohu2212" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/mohamed-hussein-a529b8169" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/mohu2211" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <p class="footer-copy">&copy; 2026 All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
