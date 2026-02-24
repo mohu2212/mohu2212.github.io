@@ -96,6 +96,7 @@ if (window.innerWidth > 768) {
 const navbar = document.getElementById('navbar');
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
+const navMenuDesktop = document.getElementById('navMenuDesktop');
 
 window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 50);
@@ -104,12 +105,14 @@ window.addEventListener('scroll', () => {
 navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
     navToggle.classList.toggle('active');
+    document.body.classList.toggle('nav-open');
 });
 
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
         navToggle.classList.remove('active');
+        document.body.classList.remove('nav-open');
     });
 });
 
