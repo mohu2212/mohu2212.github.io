@@ -102,18 +102,24 @@ window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 50);
 });
 
+const navClose = document.getElementById('navClose');
+
+function closeMenu() {
+    navMenu.classList.remove('active');
+    navToggle.classList.remove('active');
+    document.body.classList.remove('nav-open');
+}
+
 navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
     navToggle.classList.toggle('active');
     document.body.classList.toggle('nav-open');
 });
 
+navClose.addEventListener('click', closeMenu);
+
 document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
-        document.body.classList.remove('nav-open');
-    });
+    link.addEventListener('click', closeMenu);
 });
 
 // ========== Active Nav on Scroll ==========
