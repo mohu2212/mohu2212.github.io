@@ -1,712 +1,530 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Hussein - Senior Flutter Developer</title>
-    <meta name="description" content="Senior Flutter Developer with 7+ years of expertise in building cross-platform mobile applications.">
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Mohamed Hussein - Senior Flutter Developer">
-    <meta property="og:description" content="Senior Flutter Developer with 7+ years of expertise in building cross-platform mobile applications. Specialized in Clean Architecture, BLoC/Cubit, and pixel-perfect UI/UX.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://mohu2212.github.io/me.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Mohamed Hussein - Senior Flutter Developer">
-    <meta name="twitter:description" content="Senior Flutter Developer with 7+ years of expertise in building cross-platform mobile applications.">
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohamed Hussein — Senior Flutter Developer</title>
+
+<meta name="description" content="Senior Flutter Developer with 7+ years building high-performance cross-platform mobile applications. 20+ apps shipped at a 99.7% crash-free rate. Clean Architecture, BLoC/Cubit, offline-first.">
+<meta name="theme-color" content="#161826">
+<link rel="canonical" href="https://mohu2212.github.io/">
+
+<meta property="og:title" content="Mohamed Hussein — Senior Flutter Developer">
+<meta property="og:description" content="7+ years crafting cross-platform mobile applications — 20+ shipped at a 99.7% crash-free rate. Clean Architecture, BLoC/Cubit, and building for scale.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mohu2212.github.io/">
+<meta property="og:image" content="https://mohu2212.github.io/me.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mohamed Hussein — Senior Flutter Developer">
+<meta name="twitter:description" content="7+ years crafting cross-platform mobile applications — 20+ shipped at a 99.7% crash-free rate.">
+<meta name="twitter:image" content="https://mohu2212.github.io/me.jpg">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+
+<script>
+  /* Set the theme before first paint so there is no flash of the wrong ground. */
+  (function () {
+    try {
+      var stored = localStorage.getItem('theme');
+      if (stored) document.documentElement.setAttribute('data-theme', stored);
+    } catch (e) { /* private mode — keep the dark default */ }
+  })();
+</script>
 </head>
 <body>
-    <!-- Cursor Glow -->
-    <div class="cursor-glow" id="cursorGlow"></div>
 
-    <!-- Floating Social Sidebar -->
-    <div class="social-sidebar">
-        <a href="https://github.com/mohu2212" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/mohamedhussein-dev" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://www.facebook.com/mohu2211" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://wa.me/201151205977" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <div class="social-line"></div>
+<div class="progress" data-progress role="presentation"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#hero">MH<span>.</span></a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#about" data-nav="about">About</a>
+      <a href="#skills" data-nav="skills">Skills</a>
+      <a href="#build" data-nav="build">How I build</a>
+      <a href="#experience" data-nav="experience">Experience</a>
+      <a href="#projects" data-nav="projects">Projects</a>
+      <a href="#opensource" data-nav="opensource">Open Source</a>
+      <a href="#contact" data-nav="contact">Contact</a>
+      <a class="btn btn-primary btn-sm" href="Mohamed_Hussein_Flutter_CV.pdf" target="_blank" rel="noopener">Resume</a>
     </div>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo">MH<span class="dot">.</span></a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu nav-menu-desktop" id="navMenuDesktop">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#opensource" class="nav-link">Open Source</a></li>
-                <li><a href="#education" class="nav-link">Education</a></li>
-                <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="nav-tools">
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Menu">
+        <svg class="icon-menu" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h12"/></svg>
+        <svg class="icon-close" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9"/></svg>
+      </button>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme">
+        <svg class="icon-moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M13.5 9.6A5.8 5.8 0 016.4 2.5a5.8 5.8 0 107.1 7.1z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="8" cy="8" r="3.1"/><path d="M8 1v1.6M8 13.4V15M15 8h-1.6M2.6 8H1M12.9 3.1l-1.1 1.1M4.2 11.8l-1.1 1.1M12.9 12.9l-1.1-1.1M4.2 4.2L3.1 3.1"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
 
-    <!-- Mobile Menu Overlay (outside navbar to avoid stacking context issues) -->
-    <div class="nav-menu-mobile" id="navMenu">
-        <button class="nav-close" id="navClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
-        <ul class="nav-menu-mobile-list">
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#skills" class="nav-link">Skills</a></li>
-            <li><a href="#experience" class="nav-link">Experience</a></li>
-            <li><a href="#projects" class="nav-link">Projects</a></li>
-            <li><a href="#opensource" class="nav-link">Open Source</a></li>
-            <li><a href="#education" class="nav-link">Education</a></li>
-            <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
-        </ul>
+<header class="hero" id="hero">
+  <hero-field class="hero-scene" data-scene aria-hidden="true"></hero-field>
+  <div class="hero-scrim"></div>
+
+  <div class="hero-inner">
+    <div class="pill">
+      <span class="pill-dot"></span>
+      Open to Work — Full-time &amp; Freelance
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <canvas class="hero-particles" id="heroParticles"></canvas>
-        <div class="hero-bg-gradient"></div>
-        <div class="container hero-content">
-            <div class="hero-text">
-                <div class="hero-badge animate-in" data-delay="0">
-                    <span class="badge-dot"></span>
-                    Open to Work - Full-time & Freelance
-                </div>
-                <h1 class="hero-name animate-in" data-delay="100">
-                    Mohamed<br><span class="gradient-text">Hussein</span>
-                </h1>
-                <h2 class="hero-title animate-in" data-delay="200">
-                    <span class="typing-prefix">I'm a </span>
-                    <span class="typing-text" id="typingText"></span>
-                    <span class="typing-cursor">|</span>
-                </h2>
-                <p class="hero-description animate-in" data-delay="300">
-                    7+ years crafting high-performance cross-platform mobile applications &mdash; 20+ shipped
-                    at a 99.7% crash-free rate. Specialized in Clean Architecture, BLoC/Cubit, and building for scale.
-                </p>
-                <div class="hero-stats animate-in" data-delay="400">
-                    <div class="stat">
-                        <span class="stat-number" data-target="20">0</span><span class="stat-plus">+</span>
-                        <span class="stat-label">Apps Delivered</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat">
-                        <span class="stat-number" data-target="7">0</span><span class="stat-plus">+</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat">
-                        <span class="stat-number" data-target="2">0</span>
-                        <span class="stat-label">Open Source Packages</span>
-                    </div>
-                </div>
-                <div class="hero-actions animate-in" data-delay="500">
-                    <a href="#contact" class="btn btn-primary">
-                        <span>Get In Touch</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#projects" class="btn btn-outline">
-                        <span>View Projects</span>
-                    </a>
-                    <a href="Mohamed_Hussein_Flutter_CV.pdf" target="_blank" rel="noopener" class="btn btn-ghost">
-                        <i class="fas fa-download"></i>
-                        <span>Resume</span>
-                    </a>
-                </div>
-            </div>
-            <div class="hero-visual animate-in" data-delay="300">
-                <div class="hero-image-wrapper">
-                    <div class="hero-image-ring"></div>
-                    <div class="hero-image-ring ring-2"></div>
-                    <img src="me.jpg" alt="Mohamed Hussein" class="hero-image">
-                    <div class="hero-image-status">
-                        <span class="status-dot"></span>
-                    </div>
-                </div>
-                <div class="code-window">
-                    <div class="code-header">
-                        <div class="code-dots">
-                            <span class="code-dot red"></span>
-                            <span class="code-dot yellow"></span>
-                            <span class="code-dot green"></span>
-                        </div>
-                        <span class="code-title">main.dart</span>
-                    </div>
-                    <pre class="code-body"><code><span class="code-keyword">class</span> <span class="code-class">MohamedHussein</span> <span class="code-keyword">extends</span> <span class="code-class">FlutterDeveloper</span> {
-  <span class="code-keyword">final</span> experience = <span class="code-string">'7+ years'</span>;
-  <span class="code-keyword">final</span> apps = <span class="code-number">20</span>;
-  <span class="code-keyword">final</span> passion = <span class="code-string">'Building great apps'</span>;
+    <h1 class="hero-name">Mohamed<br><span>Hussein</span></h1>
 
-  <span class="code-type">List</span>&lt;<span class="code-type">String</span>&gt; <span class="code-method">get</span> skills =&gt; [
-    <span class="code-string">'Flutter & Dart'</span>,
-    <span class="code-string">'Clean Architecture'</span>,
-    <span class="code-string">'BLoC/Cubit'</span>,
-    <span class="code-string">'Firebase'</span>,
-    <span class="code-string">'RESTful APIs'</span>,
-  ];
-}</code></pre>
-                </div>
-                <div class="floating-badge badge-flutter">
-                    <i class="fas fa-feather-alt"></i> Flutter
-                </div>
-                <div class="floating-badge badge-dart">
-                    <i class="fas fa-code"></i> Dart
-                </div>
-                <div class="floating-badge badge-firebase">
-                    <i class="fas fa-fire"></i> Firebase
-                </div>
-            </div>
+    <div class="hero-role">
+      <span class="hero-role-lead">I'm a</span>
+      <span class="hero-role-text" data-role>Senior Flutter Developer</span>
+      <span class="hero-caret" aria-hidden="true"></span>
+    </div>
+
+    <p class="hero-lede">
+      7+ years crafting high-performance cross-platform mobile applications — 20+ shipped at a
+      99.7% crash-free rate. Specialized in Clean Architecture, BLoC/Cubit, and building for scale.
+    </p>
+
+    <div class="stats">
+      <div>
+        <div class="stat-value" data-count="20" data-suffix="+">20+</div>
+        <div class="stat-label">Apps delivered</div>
+      </div>
+      <div>
+        <div class="stat-value" data-count="7" data-suffix="+">7+</div>
+        <div class="stat-label">Years experience</div>
+      </div>
+      <div>
+        <div class="stat-value" data-count="99.7" data-dec="1" data-suffix="%">99.7%</div>
+        <div class="stat-label">Crash-free rate</div>
+      </div>
+      <div>
+        <div class="stat-value" data-count="2">2</div>
+        <div class="stat-label">pub.dev packages</div>
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#contact">Get In Touch</a>
+      <a class="btn btn-secondary" href="#projects">View Projects</a>
+      <a class="btn btn-ghost" href="https://github.com/mohu2212" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/mohamedhussein-dev" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="plain" id="about" aria-labelledby="about-title">
+  <div class="about-head reveal">
+    <div class="eyebrow">About</div>
+    <h2 class="section-title" id="about-title">Get to know me</h2>
+    <p class="section-desc">A passionate developer with a unique background</p>
+  </div>
+
+  <div class="about-grid">
+    <div class="reveal">
+      <figure class="about-photo">
+        <img src="me.jpg" alt="Mohamed Hussein" width="864" height="1184" loading="lazy" decoding="async">
+        <figcaption>Egypt — open to relocate</figcaption>
+      </figure>
+    </div>
+
+    <div class="reveal" data-delay="2">
+      <div class="about-copy">
+        <p>Senior Flutter Engineer with <strong>7+ years</strong> in mobile development, currently building cross-platform apps at <strong>Numersalis</strong> (France, remote) for European clients across travel, sports-club management, e-commerce and e-learning.</p>
+        <p>Co-founder and lead Flutter developer at <strong>Waslny</strong>, an Egyptian ride-hailing startup, where custom engineering replaced expensive third-party services and cut operational costs by <strong>60%</strong>.</p>
+        <p>Delivered <strong>20+ production applications</strong> to the App Store and Google Play across healthcare, education, transportation and e-commerce, holding a <strong>99.7% crash-free rate</strong>. Built on <strong>Clean Architecture</strong> and <strong>BLoC/Cubit</strong>, with offline-first caching that delivered <strong>70% faster access</strong> in low-connectivity environments and <strong>zero security incidents</strong> across HIPAA-compliant healthcare apps.</p>
+        <p>A pharmacy degree sits behind the healthcare work — medical terminology, HIPAA and pharmaceutical workflows are domain knowledge I already have.</p>
+      </div>
+
+      <div class="facts">
+        <div class="fact">
+          <div class="fact-label">Location</div>
+          <div class="fact-value">Egypt — Open to Relocate</div>
         </div>
-        <a href="#about" class="scroll-indicator">
-            <div class="mouse">
-                <div class="mouse-wheel"></div>
-            </div>
-            <span>Scroll Down</span>
-        </a>
-    </section>
-
-    <!-- About Section -->
-    <section class="section" id="about">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">About</span>
-                <h2 class="section-title">Get to know me</h2>
-                <p class="section-desc">A passionate developer with a unique background</p>
-            </div>
-            <div class="about-grid">
-                <div class="about-text reveal">
-                    <p>
-                        Senior Flutter Engineer with <strong>7+ years</strong> in mobile development, currently building
-                        cross-platform apps at <strong>Numersalis</strong> (France, remote) for European clients across
-                        travel, sports-club management, e-commerce and e-learning.
-                    </p>
-                    <p>
-                        Co-founder and lead Flutter developer at <strong>Waslny</strong>, an Egyptian ride-hailing startup,
-                        where custom engineering replaced expensive third-party services and cut operational costs by
-                        <strong>60%</strong>.
-                    </p>
-                    <p>
-                        Delivered <strong>20+ production applications</strong> to the App Store and Google Play across
-                        healthcare, education, transportation and e-commerce, holding a <strong>99.7% crash-free rate</strong>.
-                        Built on <strong>Clean Architecture</strong> and <strong>BLoC/Cubit</strong>, with offline-first caching
-                        that delivered <strong>70% faster access</strong> in low-connectivity environments and
-                        <strong>zero security incidents</strong> across HIPAA-compliant healthcare apps.
-                    </p>
-                    <p>
-                        A pharmacy degree sits behind the healthcare work &mdash; medical terminology, HIPAA and
-                        pharmaceutical workflows are domain knowledge I already have.
-                    </p>
-                </div>
-                <div class="about-info reveal" data-delay="200">
-                    <div class="info-card">
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div>
-                                <span class="info-label">Location</span>
-                                <span class="info-value">Egypt - Open to Relocate</span>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-language"></i></div>
-                            <div>
-                                <span class="info-label">Languages</span>
-                                <span class="info-value">Arabic (Native), English (Professional)</span>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-graduation-cap"></i></div>
-                            <div>
-                                <span class="info-label">Education</span>
-                                <span class="info-value">PharmD, Pharmacy - Sohag University (2024)</span>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-briefcase"></i></div>
-                            <div>
-                                <span class="info-label">Status</span>
-                                <span class="info-value available">Open to Work - Full-time & Freelance</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="fact">
+          <div class="fact-label">Languages</div>
+          <div class="fact-value">Arabic (Native), English (Professional)</div>
         </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="section section-alt" id="skills">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">Skills</span>
-                <h2 class="section-title">Technical Expertise</h2>
-                <p class="section-desc">Technologies and tools I work with daily</p>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-category reveal">
-                    <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>Mobile Development</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Flutter</span>
-                        <span class="tag">Dart</span>
-                        <span class="tag">Android</span>
-                        <span class="tag">iOS</span>
-                    </div>
-                </div>
-                <div class="skill-category reveal">
-                    <div class="skill-icon"><i class="fas fa-palette"></i></div>
-                    <h3>Frontend / UI</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Flutter Widgets</span>
-                        <span class="tag">Material Design</span>
-                        <span class="tag">Cupertino Design</span>
-                        <span class="tag">Responsive UI</span>
-                    </div>
-                </div>
-                <div class="skill-category reveal">
-                    <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
-                    <h3>State Management</h3>
-                    <div class="skill-tags">
-                        <span class="tag highlight">BLoC/Cubit</span>
-                        <span class="tag">GetX</span>
-                        <span class="tag">Provider</span>
-                    </div>
-                </div>
-                <div class="skill-category reveal">
-                    <div class="skill-icon"><i class="fas fa-sitemap"></i></div>
-                    <h3>Architecture</h3>
-                    <div class="skill-tags">
-                        <span class="tag highlight">Clean Architecture</span>
-                        <span class="tag">MVVM</span>
-                        <span class="tag">MVC</span>
-                    </div>
-                </div>
-                <div class="skill-category reveal">
-                    <div class="skill-icon"><i class="fas fa-server"></i></div>
-                    <h3>Backend Integration</h3>
-                    <div class="skill-tags">
-                        <span class="tag">RESTful APIs</span>
-                        <span class="tag">GraphQL</span>
-                        <span class="tag">Firebase</span>
-                        <span class="tag">Dio</span>
-                    </div>
-                </div>
-                <div class="skill-category reveal">
-                    <div class="skill-icon"><i class="fas fa-database"></i></div>
-                    <h3>Database & Storage</h3>
-                    <div class="skill-tags">
-                        <span class="tag">SQLite</span>
-                        <span class="tag">Firestore</span>
-                        <span class="tag">Hive</span>
-                        <span class="tag">SharedPreferences</span>
-                    </div>
-                </div>
-                <div class="skill-category reveal">
-                    <div class="skill-icon"><i class="fas fa-tools"></i></div>
-                    <h3>Tools & DevOps</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Git & GitHub</span>
-                        <span class="tag">GitHub Actions</span>
-                        <span class="tag">Firebase Distribution</span>
-                        <span class="tag">Codemagic</span>
-                    </div>
-                </div>
-                <div class="skill-category reveal">
-                    <div class="skill-icon"><i class="fas fa-puzzle-piece"></i></div>
-                    <h3>Additional</h3>
-                    <div class="skill-tags">
-                        <span class="tag">FCM Notifications</span>
-                        <span class="tag">Google Maps</span>
-                        <span class="tag">Payment Gateways</span>
-                        <span class="tag">Localization (i18n)</span>
-                    </div>
-                </div>
-            </div>
+        <div class="fact">
+          <div class="fact-label">Education</div>
+          <div class="fact-value">PharmD, Pharmacy — Sohag University (2024)</div>
         </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section class="section" id="experience">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">Experience</span>
-                <h2 class="section-title">Professional Journey</h2>
-                <p class="section-desc">My career path and achievements</p>
-            </div>
-            <div class="timeline reveal">
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <div class="timeline-pulse"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Senior Flutter Developer</h3>
-                            <span class="timeline-badge">Numersalis &middot; Full-time</span>
-                        </div>
-                        <p class="timeline-date"><i class="far fa-calendar-alt"></i> May 2026 - Present &middot; France (Remote)</p>
-                        <ul class="timeline-list">
-                            <li>Building cross-platform apps for European clients across a location-based recommendation platform, a sports-club management system, e-commerce and e-learning</li>
-                            <li>Integrated a saddle-mounted <strong>IoT sensor</strong> with the mobile app, processing real-time rider analytics (posture, balance, position) and syncing bidirectionally with the server database</li>
-                            <li>Driving architecture decisions and code reviews within an international engineering team</li>
-                            <li>Shipping production <strong>Clean Architecture</strong> and <strong>BLoC/Cubit</strong> code across iOS, Android, Web and Desktop</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <div class="timeline-pulse"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Co-Founder &amp; Lead Flutter Developer</h3>
-                            <span class="timeline-badge">Waslny &middot; Startup</span>
-                        </div>
-                        <p class="timeline-date"><i class="far fa-calendar-alt"></i> February 2025 - Present &middot; Egypt</p>
-                        <ul class="timeline-list">
-                            <li>Co-founded a ride-hailing startup and architected the <strong>dual-app ecosystem</strong> (passenger + driver) with real-time GPS tracking, trip management and live dispatch</li>
-                            <li>Reduced operational costs by <strong>60%</strong> by engineering custom solutions that replaced expensive third-party services &mdash; translating directly into higher driver earnings</li>
-                            <li>Built on Clean Architecture with BLoC/Cubit, keeping the codebase testable and scalable as the product grew</li>
-                            <li>Own full technical and product direction: architecture, release strategy and roadmap</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Senior Flutter Developer</h3>
-                            <span class="timeline-badge">Freelance</span>
-                        </div>
-                        <p class="timeline-date"><i class="far fa-calendar-alt"></i> January 2019 - January 2025</p>
-                        <ul class="timeline-list">
-                            <li>Delivered <strong>20+ cross-platform applications</strong> published to the App Store and Google Play across healthcare, education, transportation and e-commerce</li>
-                            <li>Maintained a <strong>99.7% crash-free rate</strong> through Clean Architecture, BLoC/Cubit and disciplined testing</li>
-                            <li>Owned end-to-end delivery &mdash; building backend services (<strong>Laravel, Supabase</strong>) alongside the mobile client, including database design, API development and server-side business logic</li>
-                            <li>Designed <strong>offline-first</strong> architecture with local caching, achieving a <strong>70% performance improvement</strong> in low-connectivity environments</li>
-                            <li>Enforced security best practices (SSL pinning, AES encryption) for <strong>HIPAA-compliant</strong> healthcare apps, with <strong>zero security incidents</strong></li>
-                            <li>Established CI/CD pipelines with GitHub Actions and Firebase App Distribution, cutting release cycle time by <strong>50%</strong></li>
-                            <li>Integrated RESTful APIs and third-party services including payment gateways, Google Maps, social authentication and analytics platforms</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Android Developer (Native)</h3>
-                            <span class="timeline-badge">Freelance</span>
-                        </div>
-                        <p class="timeline-date"><i class="far fa-calendar-alt"></i> January 2018 - December 2018</p>
-                        <ul class="timeline-list">
-                            <li>Built native Android applications in <strong>Java</strong>, establishing platform-level foundations in Activity/Fragment lifecycle, Material Design and the Android SDK</li>
-                            <li>Those foundations continue to inform my cross-platform architecture decisions today</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <div class="fact">
+          <div class="fact-label">Status</div>
+          <div class="fact-value">Open to Work — Full-time &amp; Freelance</div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Projects Section -->
-    <section class="section section-alt" id="projects">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">Portfolio</span>
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-desc">Some of the apps I've built and shipped</p>
-            </div>
-            <div class="projects-grid">
-                <!-- Waslny -->
-                <div class="project-card reveal">
-                    <div class="project-card-glow"></div>
-                    <div class="project-icon"><i class="fas fa-car"></i></div>
-                    <div class="project-content">
-                        <h3>Waslny</h3>
-                        <p class="project-subtitle">Ride-Hailing Startup &middot; Co-Founder</p>
-                        <p>Comprehensive ride-hailing application for passengers with real-time GPS tracking and route optimization. Custom engineering replaced costly third-party services and cut operating costs by <strong>60%</strong>.</p>
-                        <div class="project-features">
-                            <span><i class="fas fa-check-circle"></i> Real-time tracking</span>
-                            <span><i class="fas fa-check-circle"></i> Fare estimation</span>
-                            <span><i class="fas fa-check-circle"></i> In-app payments</span>
-                            <span><i class="fas fa-check-circle"></i> Ratings & reviews</span>
-                            <span><i class="fas fa-check-circle"></i> Bilingual (AR/EN)</span>
-                        </div>
-                        <div class="project-tech">
-                            <span>Flutter</span>
-                            <span>BLoC/Cubit</span>
-                            <span>Google Maps</span>
-                            <span>Firebase</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.waslny.app" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Google Play</a>
-                            <a href="https://apps.apple.com/sa/app/waslny-%D9%88%D8%B5%D9%84%D9%86%D9%8A/id6752649577" target="_blank" rel="noopener"><i class="fab fa-app-store-ios"></i> App Store</a>
-                        </div>
-                    </div>
-                </div>
+<section class="band band-skills" id="skills" aria-labelledby="skills-title">
+  <div class="shell section-pad">
+    <div class="skills-head reveal">
+      <div class="eyebrow">Skills</div>
+      <h2 class="section-title" id="skills-title">Technical Expertise</h2>
+      <p class="section-desc">Technologies and tools I work with daily</p>
+    </div>
 
-                <!-- Waslny Captain -->
-                <div class="project-card reveal">
-                    <div class="project-card-glow"></div>
-                    <div class="project-icon"><i class="fas fa-taxi"></i></div>
-                    <div class="project-content">
-                        <h3>Waslny Captain</h3>
-                        <p class="project-subtitle">Driver Application</p>
-                        <p>Driver-side companion app for Waslny platform with live order management and earnings tracking.</p>
-                        <div class="project-features">
-                            <span><i class="fas fa-check-circle"></i> Live ride requests</span>
-                            <span><i class="fas fa-check-circle"></i> Navigation</span>
-                            <span><i class="fas fa-check-circle"></i> Earnings dashboard</span>
-                            <span><i class="fas fa-check-circle"></i> Background tracking</span>
-                        </div>
-                        <div class="project-tech">
-                            <span>Flutter</span>
-                            <span>BLoC/Cubit</span>
-                            <span>Google Maps</span>
-                            <span>Firebase</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.waslny.captain" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Google Play</a>
-                        </div>
-                    </div>
-                </div>
+    <div class="scene-wrap">
+      <skill-constellation class="scene-constellation" data-scene aria-hidden="true"></skill-constellation>
+      <div class="scene-hint">Drag to orbit</div>
+    </div>
 
-                <!-- Emirates RX -->
-                <div class="project-card reveal">
-                    <div class="project-card-glow"></div>
-                    <div class="project-icon"><i class="fas fa-pills"></i></div>
-                    <div class="project-content">
-                        <h3>Emirates RX</h3>
-                        <p class="project-subtitle">Medical Information Platform</p>
-                        <p>Pharmaceutical information application to assist pharmacists in UAE with medication details and prescription preparation. <strong>HIPAA-compliant</strong> with SSL pinning; offline-first architecture delivers <strong>70% faster access</strong>.</p>
-                        <div class="project-features">
-                            <span><i class="fas fa-check-circle"></i> Medication database</span>
-                            <span><i class="fas fa-check-circle"></i> Drug info lookup</span>
-                            <span><i class="fas fa-check-circle"></i> Offline access</span>
-                        </div>
-                        <div class="project-tech">
-                            <span>Flutter</span>
-                            <span>Clean Architecture</span>
-                            <span>BLoC/Cubit</span>
-                            <span>Hive</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.emirates.rx.emirates_rx" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Google Play</a>
-                            <a href="https://apps.apple.com/sa/app/emirates-rx/id6504558186" target="_blank" rel="noopener"><i class="fab fa-app-store-ios"></i> App Store</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Medical Lab -->
-                <div class="project-card reveal">
-                    <div class="project-card-glow"></div>
-                    <div class="project-icon"><i class="fas fa-flask"></i></div>
-                    <div class="project-content">
-                        <h3>Al-Khudairi Lab</h3>
-                        <p class="project-subtitle">Medical Laboratory App</p>
-                        <p>Medical laboratory information system providing comprehensive test details, results, and promotional offers.</p>
-                        <div class="project-features">
-                            <span><i class="fas fa-check-circle"></i> Test information</span>
-                            <span><i class="fas fa-check-circle"></i> PDF reports</span>
-                            <span><i class="fas fa-check-circle"></i> Push notifications</span>
-                        </div>
-                        <div class="project-tech">
-                            <span>Flutter</span>
-                            <span>BLoC/Cubit</span>
-                            <span>Firebase</span>
-                            <span>PDF Generation</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.elkhoudary.lab.elkhoudarylab" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Google Play</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dr Course -->
-                <div class="project-card reveal">
-                    <div class="project-card-glow"></div>
-                    <div class="project-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <div class="project-content">
-                        <h3>Dr Course</h3>
-                        <p class="project-subtitle">Educational Platform</p>
-                        <p>E-learning platform for medical students with video courses and interactive quizzes.</p>
-                        <div class="project-features">
-                            <span><i class="fas fa-check-circle"></i> Video courses</span>
-                            <span><i class="fas fa-check-circle"></i> Interactive quizzes</span>
-                            <span><i class="fas fa-check-circle"></i> Certificates</span>
-                        </div>
-                        <div class="project-tech">
-                            <span>Flutter</span>
-                            <span>BLoC/Cubit</span>
-                            <span>Video Player</span>
-                            <span>Firebase</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.dr_course" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Google Play</a>
-                            <a href="https://apps.apple.com/sa/app/dr-course/id6443969611" target="_blank" rel="noopener"><i class="fab fa-app-store-ios"></i> App Store</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- EduNest -->
-                <div class="project-card reveal">
-                    <div class="project-card-glow"></div>
-                    <div class="project-icon"><i class="fas fa-school"></i></div>
-                    <div class="project-content">
-                        <h3>EduNest</h3>
-                        <p class="project-subtitle">School Management System</p>
-                        <p>Comprehensive school management app for students, teachers, and parents with real-time notifications. Serves <strong>1,000+ users</strong>; GraphQL cut data transfer by <strong>40%</strong>.</p>
-                        <div class="project-features">
-                            <span><i class="fas fa-check-circle"></i> Attendance tracking</span>
-                            <span><i class="fas fa-check-circle"></i> Grade management</span>
-                            <span><i class="fas fa-check-circle"></i> Parent-teacher comm</span>
-                        </div>
-                        <div class="project-tech">
-                            <span>Flutter</span>
-                            <span>BLoC/Cubit</span>
-                            <span>GraphQL</span>
-                            <span>SQLite</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.edunest.eductional.app" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Google Play</a>
-                            <a href="https://apps.apple.com/sa/app/edunest/id6695762554" target="_blank" rel="noopener"><i class="fab fa-app-store-ios"></i> App Store</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="skills-grid">
+      <div class="card reveal">
+        <div class="card-title skill-title">Mobile Development</div>
+        <div class="chips">
+          <span class="tag tag-outline">Flutter</span><span class="tag tag-outline">Dart</span><span class="tag tag-outline">Android</span><span class="tag tag-outline">iOS</span>
         </div>
-    </section>
-
-    <!-- Open Source Section -->
-    <section class="section" id="opensource">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">Open Source</span>
-                <h2 class="section-title">Community Contributions</h2>
-                <p class="section-desc">Flutter packages published on pub.dev</p>
-            </div>
-            <div class="opensource-grid">
-                <a href="https://pub.dev/packages/stepwise" target="_blank" rel="noopener" class="opensource-card reveal">
-                    <div class="opensource-header">
-                        <i class="fas fa-cube"></i>
-                        <span class="opensource-badge">pub.dev</span>
-                    </div>
-                    <h3>StepWise</h3>
-                    <p>A Flutter package for creating step-by-step wizards and multi-step forms with customizable navigation and validation.</p>
-                    <div class="opensource-link">
-                        <span>View on pub.dev</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </div>
-                </a>
-                <a href="https://pub.dev/packages/dynamic_rail" target="_blank" rel="noopener" class="opensource-card reveal">
-                    <div class="opensource-header">
-                        <i class="fas fa-cube"></i>
-                        <span class="opensource-badge">pub.dev</span>
-                    </div>
-                    <h3>Dynamic Rail</h3>
-                    <p>A Flutter package providing dynamic navigation rail widget with responsive behavior and customization options.</p>
-                    <div class="opensource-link">
-                        <span>View on pub.dev</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </div>
-                </a>
-            </div>
+      </div>
+      <div class="card reveal" data-delay="1">
+        <div class="card-title skill-title">Frontend / UI</div>
+        <div class="chips">
+          <span class="tag tag-outline">Flutter Widgets</span><span class="tag tag-outline">Material Design</span><span class="tag tag-outline">Cupertino Design</span><span class="tag tag-outline">Responsive UI</span>
         </div>
-    </section>
-
-    <!-- Education Section -->
-    <section class="section section-alt" id="education">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">Education</span>
-                <h2 class="section-title">Academic Background</h2>
-            </div>
-            <div class="education-card reveal">
-                <div class="education-icon"><i class="fas fa-university"></i></div>
-                <div class="education-content">
-                    <h3>Bachelor's Degree in Pharmacy</h3>
-                    <p class="education-school">Sohag University, Faculty of Pharmacy</p>
-                    <p class="education-location"><i class="fas fa-map-marker-alt"></i> Sohag, Egypt</p>
-                    <p class="education-year"><i class="far fa-calendar-alt"></i> Graduated 2024</p>
-                </div>
-            </div>
+      </div>
+      <div class="card reveal" data-delay="2">
+        <div class="card-title skill-title">State Management</div>
+        <div class="chips">
+          <span class="tag tag-accent">BLoC/Cubit</span><span class="tag tag-outline">GetX</span><span class="tag tag-outline">Provider</span>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section section-dark" id="contact">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag light">Contact</span>
-                <h2 class="section-title light">Let's Work Together</h2>
-                <p class="section-desc light">Have a project in mind? Let's build something amazing!</p>
-            </div>
-            <div class="contact-grid">
-                <a href="mailto:mo.hu2212@gmail.com" class="contact-card reveal">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Email</h3>
-                    <p>mo.hu2212@gmail.com</p>
-                </a>
-                <a href="https://wa.me/201151205977" target="_blank" rel="noopener" class="contact-card reveal">
-                    <i class="fab fa-whatsapp"></i>
-                    <h3>WhatsApp</h3>
-                    <p>+20 1151205977</p>
-                </a>
-                <a href="tel:+201151205977" class="contact-card reveal">
-                    <i class="fas fa-phone"></i>
-                    <h3>Phone</h3>
-                    <p>+20 1151205977</p>
-                </a>
-                <a href="https://github.com/mohu2212" target="_blank" rel="noopener" class="contact-card reveal">
-                    <i class="fab fa-github"></i>
-                    <h3>GitHub</h3>
-                    <p>mohu2212</p>
-                </a>
-                <a href="https://www.linkedin.com/in/mohamedhussein-dev" target="_blank" rel="noopener" class="contact-card reveal">
-                    <i class="fab fa-linkedin"></i>
-                    <h3>LinkedIn</h3>
-                    <p>Mohamed Hussein</p>
-                </a>
-                <a href="https://www.facebook.com/mohu2211" target="_blank" rel="noopener" class="contact-card reveal">
-                    <i class="fab fa-facebook"></i>
-                    <h3>Facebook</h3>
-                    <p>Mohamed Hussein</p>
-                </a>
-                <a href="Mohamed_Hussein_Flutter_CV.pdf" target="_blank" rel="noopener" class="contact-card reveal">
-                    <i class="fas fa-file-pdf"></i>
-                    <h3>Download CV</h3>
-                    <p>View my full resume</p>
-                </a>
-            </div>
+      </div>
+      <div class="card reveal" data-delay="3">
+        <div class="card-title skill-title">Architecture</div>
+        <div class="chips">
+          <span class="tag tag-accent">Clean Architecture</span><span class="tag tag-outline">MVVM</span><span class="tag tag-outline">MVC</span>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <p>Designed & Built by <strong>Mohamed Hussein</strong></p>
-            <div class="footer-links">
-                <a href="https://github.com/mohu2212" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/mohamedhussein-dev" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.facebook.com/mohu2211" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
-            </div>
-            <p class="footer-copy">&copy; 2026 All rights reserved.</p>
+      </div>
+      <div class="card reveal" data-delay="4">
+        <div class="card-title skill-title">Backend Integration</div>
+        <div class="chips">
+          <span class="tag tag-outline">RESTful APIs</span><span class="tag tag-outline">GraphQL</span><span class="tag tag-outline">Firebase</span><span class="tag tag-outline">Dio</span>
         </div>
-    </footer>
+      </div>
+      <div class="card reveal" data-delay="5">
+        <div class="card-title skill-title">Database &amp; Storage</div>
+        <div class="chips">
+          <span class="tag tag-outline">SQLite</span><span class="tag tag-outline">Firestore</span><span class="tag tag-outline">Hive</span><span class="tag tag-outline">SharedPreferences</span>
+        </div>
+      </div>
+      <div class="card reveal" data-delay="6">
+        <div class="card-title skill-title">Tools &amp; DevOps</div>
+        <div class="chips">
+          <span class="tag tag-outline">Git &amp; GitHub</span><span class="tag tag-outline">GitHub Actions</span><span class="tag tag-outline">Firebase Distribution</span><span class="tag tag-outline">Codemagic</span>
+        </div>
+      </div>
+      <div class="card reveal" data-delay="7">
+        <div class="card-title skill-title">Additional</div>
+        <div class="chips">
+          <span class="tag tag-outline">FCM Notifications</span><span class="tag tag-outline">Google Maps</span><span class="tag tag-outline">Payment Gateways</span><span class="tag tag-outline">Localization (i18n)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+<section class="plain" id="build" aria-labelledby="build-title">
+  <div class="build-grid">
+    <div class="reveal">
+      <div class="eyebrow">Method</div>
+      <h2 class="section-title build-title" id="build-title">How I build</h2>
+      <p class="build-lede">Every production app is built on <strong>Clean Architecture</strong> and <strong>BLoC/Cubit</strong>, with offline-first caching that delivered <strong>70% faster access</strong> in low-connectivity environments — and a <strong>99.7% crash-free rate</strong> across 20+ releases.</p>
+      <div class="layers">
+        <div class="layer"><span class="layer-num">01</span><span class="layer-text"><strong>Presentation</strong> <span>— widgets driven by BLoC/Cubit state</span></span></div>
+        <div class="layer"><span class="layer-num">02</span><span class="layer-text"><strong>Domain</strong> <span>— entities and use cases, framework-free</span></span></div>
+        <div class="layer"><span class="layer-num">03</span><span class="layer-text"><strong>Data</strong> <span>— repositories over REST, GraphQL, Hive</span></span></div>
+        <div class="layer"><span class="layer-num">04</span><span class="layer-text"><strong>Core</strong> <span>— DI, networking, cache, SSL pinning, AES</span></span></div>
+      </div>
+    </div>
+    <arch-stack class="scene-arch" data-scene aria-hidden="true"></arch-stack>
+  </div>
+</section>
 
-    <script src="script.js"></script>
+<section class="band" id="experience" aria-labelledby="experience-title">
+  <div class="shell section-pad">
+    <div class="exp-head reveal">
+      <div class="eyebrow">Experience</div>
+      <h2 class="section-title" id="experience-title">Professional Journey</h2>
+      <p class="section-desc">My career path and achievements</p>
+    </div>
+
+    <div class="timeline">
+      <article class="job job-current reveal">
+        <div>
+          <h3 class="job-role">Senior Flutter Developer</h3>
+          <div class="job-org">Numersalis · Full-time</div>
+          <div class="job-when">May 2026 — Present · France (Remote)</div>
+        </div>
+        <div>
+          <ul class="job-points">
+            <li>Building cross-platform apps for European clients across a location-based recommendation platform, a sports-club management system, e-commerce and e-learning</li>
+            <li>Integrated a saddle-mounted <strong>IoT sensor</strong> with the mobile app, processing real-time rider analytics (posture, balance, position) and syncing bidirectionally with the server database</li>
+            <li>Driving architecture decisions and code reviews within an international engineering team</li>
+            <li>Shipping production <strong>Clean Architecture</strong> and <strong>BLoC/Cubit</strong> code across iOS, Android, Web and Desktop</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job job-current reveal">
+        <div>
+          <h3 class="job-role">Co-Founder &amp; Lead Flutter Developer</h3>
+          <div class="job-org">Waslny · Startup</div>
+          <div class="job-when">February 2025 — Present · Egypt</div>
+        </div>
+        <div>
+          <ul class="job-points">
+            <li>Co-founded a ride-hailing startup and architected the <strong>dual-app ecosystem</strong> (passenger + driver) with real-time GPS tracking, trip management and live dispatch</li>
+            <li>Reduced operational costs by <strong>60%</strong> by engineering custom solutions that replaced expensive third-party services — translating directly into higher driver earnings</li>
+            <li>Built on Clean Architecture with BLoC/Cubit, keeping the codebase testable and scalable as the product grew</li>
+            <li>Own full technical and product direction: architecture, release strategy and roadmap</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job reveal">
+        <div>
+          <h3 class="job-role">Senior Flutter Developer</h3>
+          <div class="job-org">Freelance</div>
+          <div class="job-when">January 2019 — January 2025</div>
+        </div>
+        <div>
+          <ul class="job-points">
+            <li>Delivered <strong>20+ cross-platform applications</strong> published to the App Store and Google Play across healthcare, education, transportation and e-commerce</li>
+            <li>Maintained a <strong>99.7% crash-free rate</strong> through Clean Architecture, BLoC/Cubit and disciplined testing</li>
+            <li>Owned end-to-end delivery — building backend services (<strong>Laravel, Supabase</strong>) alongside the mobile client, including database design, API development and server-side business logic</li>
+            <li>Designed <strong>offline-first</strong> architecture with local caching, achieving a <strong>70% performance improvement</strong> in low-connectivity environments</li>
+            <li>Enforced security best practices (SSL pinning, AES encryption) for <strong>HIPAA-compliant</strong> healthcare apps, with <strong>zero security incidents</strong></li>
+            <li>Established CI/CD pipelines with GitHub Actions and Firebase App Distribution, cutting release cycle time by <strong>50%</strong></li>
+            <li>Integrated RESTful APIs and third-party services including payment gateways, Google Maps, social authentication and analytics platforms</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job reveal">
+        <div>
+          <h3 class="job-role">Android Developer (Native)</h3>
+          <div class="job-org">Freelance</div>
+          <div class="job-when">January 2018 — December 2018</div>
+        </div>
+        <div>
+          <ul class="job-points">
+            <li>Built native Android applications in <strong>Java</strong>, establishing platform-level foundations in Activity/Fragment lifecycle, Material Design and the Android SDK</li>
+            <li>Those foundations continue to inform my cross-platform architecture decisions today</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="plain" id="projects" aria-labelledby="projects-title">
+  <div class="projects-intro">
+    <div class="reveal">
+      <div class="eyebrow">Portfolio</div>
+      <h2 class="section-title" id="projects-title">Featured Projects</h2>
+      <p class="section-desc projects-desc">Some of the apps I've built and shipped</p>
+      <div class="chips">
+        <span class="tag tag-neutral">Healthcare</span><span class="tag tag-neutral">Education</span><span class="tag tag-neutral">Transportation</span><span class="tag tag-neutral">E-commerce</span>
+      </div>
+    </div>
+    <phone-stage class="scene-phone" data-scene aria-hidden="true"></phone-stage>
+  </div>
+
+  <div class="projects-grid">
+    <article class="card project reveal">
+      <div class="card-kicker">Ride-Hailing Startup · Co-Founder</div>
+      <h3 class="card-title">Waslny</h3>
+      <p class="card-body">Comprehensive ride-hailing application for passengers with real-time GPS tracking and route optimization. Custom engineering replaced costly third-party services and cut operating costs by <strong>60%</strong>.</p>
+      <div class="project-features">
+        <span>Real-time tracking</span><span class="sep">·</span><span>Fare estimation</span><span class="sep">·</span><span>In-app payments</span><span class="sep">·</span><span>Ratings &amp; reviews</span><span class="sep">·</span><span>Bilingual (AR/EN)</span>
+      </div>
+      <div class="project-tech">
+        <span class="tag tag-outline">Flutter</span><span class="tag tag-outline">BLoC/Cubit</span><span class="tag tag-outline">Google Maps</span><span class="tag tag-outline">Firebase</span>
+      </div>
+      <div class="project-links">
+        <a class="btn btn-secondary btn-sm" href="https://play.google.com/store/apps/details?id=com.waslny.app" target="_blank" rel="noopener">Google Play</a>
+        <a class="btn btn-secondary btn-sm" href="https://apps.apple.com/sa/app/waslny-%D9%88%D8%B5%D9%84%D9%86%D9%8A/id6752649577" target="_blank" rel="noopener">App Store</a>
+      </div>
+    </article>
+
+    <article class="card project reveal" data-delay="1">
+      <div class="card-kicker">Driver Application</div>
+      <h3 class="card-title">Waslny Captain</h3>
+      <p class="card-body">Driver-side companion app for Waslny platform with live order management and earnings tracking.</p>
+      <div class="project-features">
+        <span>Live ride requests</span><span class="sep">·</span><span>Navigation</span><span class="sep">·</span><span>Earnings dashboard</span><span class="sep">·</span><span>Background tracking</span>
+      </div>
+      <div class="project-tech">
+        <span class="tag tag-outline">Flutter</span><span class="tag tag-outline">BLoC/Cubit</span><span class="tag tag-outline">Google Maps</span><span class="tag tag-outline">Firebase</span>
+      </div>
+      <div class="project-links">
+        <a class="btn btn-secondary btn-sm" href="https://play.google.com/store/apps/details?id=com.waslny.captain" target="_blank" rel="noopener">Google Play</a>
+      </div>
+    </article>
+
+    <article class="card project reveal" data-delay="2">
+      <div class="card-kicker">Medical Information Platform</div>
+      <h3 class="card-title">Emirates RX</h3>
+      <p class="card-body">Pharmaceutical information application to assist pharmacists in UAE with medication details and prescription preparation. <strong>HIPAA-compliant</strong> with SSL pinning; offline-first architecture delivers <strong>70% faster access</strong>.</p>
+      <div class="project-features">
+        <span>Medication database</span><span class="sep">·</span><span>Drug info lookup</span><span class="sep">·</span><span>Offline access</span>
+      </div>
+      <div class="project-tech">
+        <span class="tag tag-outline">Flutter</span><span class="tag tag-outline">Clean Architecture</span><span class="tag tag-outline">BLoC/Cubit</span><span class="tag tag-outline">Hive</span>
+      </div>
+      <div class="project-links">
+        <a class="btn btn-secondary btn-sm" href="https://play.google.com/store/apps/details?id=com.emirates.rx.emirates_rx" target="_blank" rel="noopener">Google Play</a>
+        <a class="btn btn-secondary btn-sm" href="https://apps.apple.com/sa/app/emirates-rx/id6504558186" target="_blank" rel="noopener">App Store</a>
+      </div>
+    </article>
+
+    <article class="card project reveal" data-delay="3">
+      <div class="card-kicker">Medical Laboratory App</div>
+      <h3 class="card-title">Al-Khudairi Lab</h3>
+      <p class="card-body">Medical laboratory information system providing comprehensive test details, results, and promotional offers.</p>
+      <div class="project-features">
+        <span>Test information</span><span class="sep">·</span><span>PDF reports</span><span class="sep">·</span><span>Push notifications</span>
+      </div>
+      <div class="project-tech">
+        <span class="tag tag-outline">Flutter</span><span class="tag tag-outline">BLoC/Cubit</span><span class="tag tag-outline">Firebase</span><span class="tag tag-outline">PDF Generation</span>
+      </div>
+      <div class="project-links">
+        <a class="btn btn-secondary btn-sm" href="https://play.google.com/store/apps/details?id=com.elkhoudary.lab.elkhoudarylab" target="_blank" rel="noopener">Google Play</a>
+      </div>
+    </article>
+
+    <article class="card project reveal" data-delay="4">
+      <div class="card-kicker">Educational Platform</div>
+      <h3 class="card-title">Dr Course</h3>
+      <p class="card-body">E-learning platform for medical students with video courses and interactive quizzes.</p>
+      <div class="project-features">
+        <span>Video courses</span><span class="sep">·</span><span>Interactive quizzes</span><span class="sep">·</span><span>Certificates</span>
+      </div>
+      <div class="project-tech">
+        <span class="tag tag-outline">Flutter</span><span class="tag tag-outline">BLoC/Cubit</span><span class="tag tag-outline">Video Player</span><span class="tag tag-outline">Firebase</span>
+      </div>
+      <div class="project-links">
+        <a class="btn btn-secondary btn-sm" href="https://play.google.com/store/apps/details?id=com.dr_course" target="_blank" rel="noopener">Google Play</a>
+        <a class="btn btn-secondary btn-sm" href="https://apps.apple.com/sa/app/dr-course/id6443969611" target="_blank" rel="noopener">App Store</a>
+      </div>
+    </article>
+
+    <article class="card project reveal" data-delay="5">
+      <div class="card-kicker">School Management System</div>
+      <h3 class="card-title">EduNest</h3>
+      <p class="card-body">Comprehensive school management app for students, teachers, and parents with real-time notifications. Serves <strong>1,000+ users</strong>; GraphQL cut data transfer by <strong>40%</strong>.</p>
+      <div class="project-features">
+        <span>Attendance tracking</span><span class="sep">·</span><span>Grade management</span><span class="sep">·</span><span>Parent-teacher comm</span>
+      </div>
+      <div class="project-tech">
+        <span class="tag tag-outline">Flutter</span><span class="tag tag-outline">BLoC/Cubit</span><span class="tag tag-outline">GraphQL</span><span class="tag tag-outline">SQLite</span>
+      </div>
+      <div class="project-links">
+        <a class="btn btn-secondary btn-sm" href="https://play.google.com/store/apps/details?id=com.edunest.eductional.app" target="_blank" rel="noopener">Google Play</a>
+        <a class="btn btn-secondary btn-sm" href="https://apps.apple.com/sa/app/edunest/id6695762554" target="_blank" rel="noopener">App Store</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="band" id="opensource" aria-labelledby="opensource-title">
+  <div class="shell section-pad">
+    <div class="os-head reveal">
+      <div class="eyebrow">Open Source</div>
+      <h2 class="section-title" id="opensource-title">Community Contributions</h2>
+      <p class="section-desc">Flutter packages published on pub.dev</p>
+    </div>
+    <div class="os-grid">
+      <a class="card os-card reveal" href="https://pub.dev/packages/stepwise" target="_blank" rel="noopener">
+        <div class="card-kicker">pub.dev</div>
+        <h3 class="card-title">StepWise</h3>
+        <p class="card-body">A Flutter package for creating step-by-step wizards and multi-step forms with customizable navigation and validation.</p>
+        <div class="os-more">View on pub.dev →</div>
+      </a>
+      <a class="card os-card reveal" data-delay="1" href="https://pub.dev/packages/dynamic_rail" target="_blank" rel="noopener">
+        <div class="card-kicker">pub.dev</div>
+        <h3 class="card-title">Dynamic Rail</h3>
+        <p class="card-body">A Flutter package providing dynamic navigation rail widget with responsive behavior and customization options.</p>
+        <div class="os-more">View on pub.dev →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="plain" id="education" aria-labelledby="education-title">
+  <div class="edu-grid reveal">
+    <div>
+      <div class="eyebrow">Education</div>
+      <h2 class="edu-title" id="education-title">Academic Background</h2>
+    </div>
+    <div class="edu-detail">
+      <h3 class="edu-degree">Bachelor's Degree in Pharmacy</h3>
+      <div class="edu-school">Sohag University, Faculty of Pharmacy</div>
+      <div class="edu-where">Sohag, Egypt · Graduated 2024</div>
+    </div>
+  </div>
+</section>
+
+<section class="band contact" id="contact" aria-labelledby="contact-title">
+  <div class="shell section-pad">
+    <div class="contact-head reveal">
+      <div class="eyebrow">Contact</div>
+      <h2 class="contact-title" id="contact-title">Let's Work Together</h2>
+      <p class="contact-lede">Have a project in mind? Let's build something amazing!</p>
+    </div>
+
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:mo.hu2212@gmail.com">
+        <div class="contact-label">Email</div>
+        <div class="contact-value">mo.hu2212@gmail.com</div>
+      </a>
+      <a class="contact-card" href="https://wa.me/201151205977" target="_blank" rel="noopener">
+        <div class="contact-label">WhatsApp</div>
+        <div class="contact-value">+20 1151205977</div>
+      </a>
+      <a class="contact-card" href="tel:+201151205977">
+        <div class="contact-label">Phone</div>
+        <div class="contact-value">+20 1151205977</div>
+      </a>
+      <a class="contact-card" href="https://github.com/mohu2212" target="_blank" rel="noopener">
+        <div class="contact-label">GitHub</div>
+        <div class="contact-value">mohu2212</div>
+      </a>
+      <a class="contact-card" href="https://www.linkedin.com/in/mohamedhussein-dev" target="_blank" rel="noopener">
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-value">Mohamed Hussein</div>
+      </a>
+      <a class="contact-card" href="Mohamed_Hussein_Flutter_CV.pdf" target="_blank" rel="noopener">
+        <div class="contact-label">Download CV</div>
+        <div class="contact-value">View my full resume</div>
+      </a>
+    </div>
+
+    <div class="contact-actions">
+      <a class="btn btn-primary" href="mailto:mo.hu2212@gmail.com">Email me</a>
+      <a class="btn btn-secondary" href="https://wa.me/201151205977" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>Designed &amp; Built by <strong>Mohamed Hussein</strong></div>
+    <div>© 2026 All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script type="module" src="scenes.js"></script>
 </body>
 </html>
