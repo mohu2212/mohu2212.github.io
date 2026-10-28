@@ -469,7 +469,7 @@ a:hover { color: var(--color-accent-200); }
   animation: noct-float 9s ease-in-out infinite;
 }
 .about-photo img {
-  width: 100%; aspect-ratio: 4 / 5;
+  width: 100%; height: auto; aspect-ratio: 4 / 5;
   object-fit: cover; object-position: 50% 18%;
 }
 .about-photo::after {
