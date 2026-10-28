@@ -146,9 +146,9 @@
 
   var roleEl = document.querySelector('[data-role]');
   var ROLES = [
+    'Senior Full-Stack Engineer',
     'Senior Flutter Developer',
     'Mobile Architect',
-    'Clean Architecture Engineer',
     'Co-Founder at Waslny'
   ];
   var ri = 0;
