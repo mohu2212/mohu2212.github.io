@@ -419,3 +419,219 @@ html:not(.js) .more-toggle { display: none; }
   html { scroll-behavior: auto; }
   .js .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* ==================================================
+   PREMIUM MOTION & INTERACTION PASS (designed with ChatGPT)
+   Vanilla CSS + JS · No external dependencies
+   ================================================== */
+
+/* ---------- Global refinements ---------- */
+html { scroll-padding-top: 88px; }
+body { text-rendering: optimizeLegibility; }
+::selection { background: var(--accent); color: var(--on-accent); }
+
+/* ---------- Theme transition ---------- */
+.theme-transition,
+.theme-transition body,
+.theme-transition .nav,
+.theme-transition .project,
+.theme-transition .cap,
+.theme-transition .edu,
+.theme-transition .pkgs a,
+.theme-transition .contact-list,
+.theme-transition .proof li,
+.theme-transition .btn,
+.theme-transition .icon-btn,
+.theme-transition .diagram,
+.theme-transition .shots {
+  transition: background-color 420ms ease, color 420ms ease, border-color 420ms ease;
+}
+
+/* ---------- Scroll progress ---------- */
+.scroll-progress { position: fixed; inset: 0 0 auto; height: 2px; z-index: 100; pointer-events: none; background: transparent; }
+.scroll-progress span { display: block; width: 100%; height: 100%; background: var(--accent); transform: scaleX(0); transform-origin: left center; will-change: transform; }
+
+/* ---------- Sticky navigation ---------- */
+.nav { transition: background-color 250ms ease, border-color 250ms ease; }
+.nav-inner { transition: height 280ms cubic-bezier(.2, .7, .2, 1); }
+.nav.scrolled { background: color-mix(in srgb, var(--bg) 92%, transparent); border-bottom-color: var(--accent-line); }
+.nav.scrolled .nav-inner { height: 56px; }
+@media (max-width: 900px) { .nav.scrolled .nav-links { top: 56px; } }
+.nav-links a { position: relative; transition: color 180ms ease; }
+.nav-links a::after {
+  content: ""; position: absolute; left: 10px; right: 10px; bottom: 3px; height: 2px; border-radius: 2px;
+  background: var(--accent); transform: scaleX(0); transform-origin: left;
+  transition: transform 220ms cubic-bezier(.2, .7, .2, 1);
+}
+.nav-links a.active::after { transform: scaleX(1); }
+.nav-links a.active { color: var(--text); }
+@media (max-width: 900px) { .nav-links a::after { display: none; } }
+
+/* ---------- Hero entrance ---------- */
+.hero-photo { transform-origin: center; }
+.motion-ready .hero-enter {
+  opacity: 0; transform: translateY(16px);
+  animation: heroEntrance 720ms cubic-bezier(.2, .7, .2, 1) both;
+  animation-delay: calc(var(--hero-i, 0) * 85ms + 80ms);
+}
+.motion-ready .hero-photo.hero-enter {
+  transform: translateY(12px) scale(.97);
+  animation-name: heroPhotoEntrance; animation-duration: 850ms; animation-delay: 250ms;
+}
+@keyframes heroEntrance { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes heroPhotoEntrance { from { opacity: 0; transform: translateY(12px) scale(.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+/* ---------- Scroll reveals ---------- */
+/* Content is visible by default; it is hidden only once the motion system is ready. */
+.js .reveal { opacity: 1; transform: none; transition: none; }
+.motion-ready .reveal:not(.in) { opacity: 0; transform: translateY(18px); }
+.motion-ready .reveal { transition: opacity 700ms cubic-bezier(.2, .7, .2, 1), transform 700ms cubic-bezier(.2, .7, .2, 1); }
+.motion-ready .reveal.in { opacity: 1; transform: none; }
+
+/* Stagger content inside project cards */
+.motion-ready .reveal.in .project-body > * {
+  animation: cardContentEntrance 600ms cubic-bezier(.2, .7, .2, 1) both;
+  animation-delay: calc(var(--child-i, 0) * 65ms + 100ms);
+}
+.motion-ready .reveal.in .project-body > :nth-child(1) { --child-i: 0; }
+.motion-ready .reveal.in .project-body > :nth-child(2) { --child-i: 1; }
+.motion-ready .reveal.in .project-body > :nth-child(3) { --child-i: 2; }
+.motion-ready .reveal.in .project-body > :nth-child(4) { --child-i: 3; }
+.motion-ready .reveal.in .project-body > :nth-child(5) { --child-i: 4; }
+.motion-ready .reveal.in .project-body > :nth-child(6) { --child-i: 5; }
+@keyframes cardContentEntrance { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ---------- Project cards ---------- */
+.project { position: relative; isolation: isolate; }
+.project > * { position: relative; z-index: 1; }
+.project::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0; border-radius: inherit;
+  background: radial-gradient(440px circle at var(--spot-x, 50%) var(--spot-y, 50%), var(--accent-soft), transparent 72%);
+  transition: opacity 260ms ease;
+}
+.project::after {
+  content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  border: 1px solid var(--accent-line); border-radius: inherit; opacity: 0; transition: opacity 260ms ease;
+}
+.project.pointer-active,
+.motion-ready .project.reveal.in.pointer-active {
+  transform: translateY(-4px);
+  transition: transform 300ms cubic-bezier(.2, .7, .2, 1), opacity 700ms ease;
+}
+.project.pointer-active::before,
+.project.pointer-active::after { opacity: 1; }
+
+/* ---------- Buttons ---------- */
+.btn { position: relative; overflow: hidden; transition: transform 220ms cubic-bezier(.2, .7, .2, 1), background-color 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 180ms ease; }
+.btn-primary { box-shadow: 0 2px 8px rgba(79, 140, 255, .12); }
+.btn-primary:hover { box-shadow: 0 5px 18px rgba(79, 140, 255, .20); }
+.btn-ghost:hover, .btn-outline:hover { transform: translateY(-2px); }
+.icon-btn { transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease; }
+.icon-btn:hover { transform: translateY(-2px); }
+.btn:active, .icon-btn:active { transform: scale(.97); }
+
+/* ---------- Architecture diagrams ---------- */
+.motion-ready .diagram .d-node,
+.motion-ready .diagram .d-badge,
+.motion-ready .diagram .d-link { opacity: 0; transform: translateY(7px) scale(.97); }
+.motion-ready .diagram.is-visible .d-node,
+.motion-ready .diagram.is-visible .d-badge,
+.motion-ready .diagram.is-visible .d-link {
+  animation: diagramNodeEntrance 440ms cubic-bezier(.2, .7, .2, 1) both;
+  animation-delay: calc(var(--diagram-i, 0) * 65ms);
+}
+.motion-ready .diagram .d-arrow { transform-origin: top center; transform: scaleY(0); }
+.motion-ready .diagram.is-visible .d-arrow:not(.d-arrow-h) { animation: connectorVertical 320ms ease-out both; animation-delay: calc(var(--diagram-i, 0) * 65ms); }
+.motion-ready .diagram .d-arrow-h { transform-origin: left center; transform: scaleX(0); }
+.motion-ready .diagram.is-visible .d-arrow-h { animation: connectorHorizontal 320ms ease-out both; animation-delay: calc(var(--diagram-i, 0) * 65ms); }
+@keyframes diagramNodeEntrance { from { opacity: 0; transform: translateY(7px) scale(.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes connectorVertical { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes connectorHorizontal { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* ---------- Metrics ---------- */
+.metric, .d-badge { transition: transform 250ms ease, border-color 250ms ease; }
+.metric:hover { transform: translateY(-2px); }
+
+/* ---------- Tags & proof chips ---------- */
+.tags li, .proof li { transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease; }
+.proof li:hover { border-color: var(--accent-line); color: var(--text); }
+
+/* ---------- Timeline ---------- */
+.job::before { transition: transform 250ms ease, box-shadow 250ms ease; }
+.job:has(.now)::before { box-shadow: 0 0 0 4px var(--accent-soft); }
+.job:hover::before { transform: scale(1.2); }
+
+/* ---------- Engineering cards ---------- */
+.cap { transition: transform 250ms cubic-bezier(.2, .7, .2, 1), border-color 200ms ease; }
+.cap:hover { transform: translateY(-3px); border-color: var(--accent-line); }
+.motion-ready .cap.reveal.in:hover { transform: translateY(-3px); }
+
+/* ---------- More projects ---------- */
+.row { transition: background-color 180ms ease; }
+.row:hover { background-color: var(--accent-soft); }
+.row-links a { transition: color 180ms ease; }
+.js .more.expanded .row.extra { animation: cardContentEntrance 420ms cubic-bezier(.2, .7, .2, 1) both; animation-delay: calc(var(--item-i, 0) * 45ms); }
+
+/* ---------- Open source ---------- */
+.pkgs a { transition: transform 220ms ease, border-color 180ms ease; }
+.pkgs a:hover { transform: translateX(4px); }
+.pkgs a .arrow { transition: transform 200ms ease; }
+.pkgs a:hover .arrow { transform: translate(3px, -3px); }
+
+/* ---------- Contact ---------- */
+.contact-list li { transition: background-color 180ms ease; }
+.contact-list li:hover { background: var(--accent-soft); }
+.contact-list a { transition: color 180ms ease; }
+
+/* ---------- Screenshot gallery ---------- */
+.shot { transition: transform 250ms cubic-bezier(.2, .7, .2, 1), border-color 180ms ease; }
+.shot:hover { transform: translateY(-4px); border-color: var(--accent-line); }
+.shot img { transition: transform 350ms cubic-bezier(.2, .7, .2, 1); }
+.shot:hover img { transform: scale(1.025); }
+
+/* ---------- Lightbox ---------- */
+.lightbox { opacity: 0; transform: translateY(10px) scale(.975); transition: opacity 190ms ease, transform 240ms cubic-bezier(.2, .7, .2, 1); }
+.lightbox[open] { display: flex; align-items: center; justify-content: center; }
+.lightbox.is-open { opacity: 1; transform: translateY(0) scale(1); }
+.lightbox img { transform: scale(.99); transition: transform 240ms cubic-bezier(.2, .7, .2, 1); }
+.lightbox.is-open img { transform: scale(1); }
+.lightbox-close, .lightbox-nav { transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease; }
+.lightbox-close:hover { transform: translateY(-2px); }
+.lightbox-prev:hover { transform: translate(-2px, -50%); }
+.lightbox-next:hover { transform: translate(2px, -50%); }
+
+/* ---------- Mobile refinements ---------- */
+@media (max-width: 900px) {
+  .nav-links { transform: translateY(-6px); opacity: 0; transition: opacity 180ms ease, transform 180ms ease; }
+  .nav-links.open { transform: translateY(0); opacity: 1; }
+}
+@media (max-width: 720px), (hover: none) {
+  .project.pointer-active, .cap:hover, .shot:hover, .metric:hover { transform: none; }
+  .project::before { display: none; }
+  .proof li:hover { border-color: var(--border); }
+}
+@media (max-width: 720px) {
+  .diagram-registry .d-arrow-h { transform-origin: top center; }
+  .motion-ready .diagram-registry .d-arrow-h { transform: scaleY(0); }
+  .motion-ready .diagram-registry.is-visible .d-arrow-h { animation-name: connectorVertical; }
+  .lightbox { max-width: 94vw; }
+}
+
+/* ---------- Reduced motion: no animation ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .motion-ready .reveal,
+  .motion-ready .hero-enter,
+  .motion-ready .diagram .d-node,
+  .motion-ready .diagram .d-arrow,
+  .motion-ready .diagram .d-badge,
+  .motion-ready .diagram .d-link { opacity: 1 !important; transform: none !important; }
+  .scroll-progress { display: none; }
+  .project.pointer-active, .cap:hover, .shot:hover, .btn:hover, .btn-ghost:hover, .btn-outline:hover,
+  .icon-btn:hover, .pkgs a:hover, .metric:hover, .shot:hover img { transform: none !important; }
+}

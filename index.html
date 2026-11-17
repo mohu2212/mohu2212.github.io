@@ -26,6 +26,12 @@
     try { t = localStorage.getItem('theme'); } catch (e) {}
     if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
     document.documentElement.classList.add('js');
+    try {
+      if (!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) && 'IntersectionObserver' in window) {
+        document.documentElement.classList.add('motion-ready');
+        window.__motionFallback = setTimeout(function () { if (!window.__motionInit) document.documentElement.classList.remove('motion-ready'); }, 2500);
+      }
+    } catch (e) {}
   })();
 </script>
 <link rel="stylesheet" href="style.css">
